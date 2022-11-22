@@ -12,6 +12,7 @@ try {
 }
 
 const db = mongoClient.db("beautyexpress");
-export const usersCollection = db.collection("users");
-export const sessionsCollection = db.collection("connection");
-export const transactionsCollection = db.collection("cart");
+export const users = db.collection("users");
+export const sessions = db.collection("connection");
+export const products = db.collection("products");
+export const cart = db.collection("cart");
