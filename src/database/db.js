@@ -12,7 +12,10 @@ try {
 }
 
 const db = mongoClient.db("beautyexpress");
+
 export const users = db.collection("users");
-export const sessions = db.collection("connection");
+export const connection = db.collection("connection");
 export const products = db.collection("products");
 export const cart = db.collection("cart");
+
+export default db;
