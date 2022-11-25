@@ -4,11 +4,13 @@ export async function getProducts(req, res) {
   try {
     const { category, productName } = req.query;
 
-    //console.log("query =", productName);
+    // console.log("query =", req.query);
     let products = [];
     if (category) {
+      console.log("entrei aqui if");
       products = await products.find({ category }).toArray();
     } else if (productName) {
+      console.log("entrei aqui else if");
       //   products = await products.find({ productName: productName });
       products = await products
         .find({ productName: { $regex: productName, $options: "i" } })
@@ -16,12 +18,14 @@ export async function getProducts(req, res) {
 
       // db.products.find({productName: /.*malte.*/i})
     } else {
+      console.log("entrei aqui else");
       products = await products.find().toArray();
     }
-    return response.status(200).send(products);
+    return res.status(200).send(products);
+    // return res.status(200).send(products);
   } catch (error) {
     console.error(error);
-    return response.status(500).send({ message: error });
+    return res.status(500).send({ message: error });
   }
 }
 
