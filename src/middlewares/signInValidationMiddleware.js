@@ -23,16 +23,16 @@ export async function signInValidation(req, res, next) {
             return res.status(401).send({ message: "Usuário não existe" });
         }
 
-        await users.updateOne({ email: user.email }, { $set: { userId: userHasAnAccount._id } });
+        await users.updateOne({ email: user.email }, { $set: { userId: userHasAnAccount._id} });
 
         const isInAsession = await connection.findOne({ token: user.token });
-
 
         if (isInAsession) {
             return res.status(401).send({ message: "Sua conta já está logada!" });
         }
 
-        await connection.insertOne({ token, userId: userHasAnAccount._id });
+        await connection.insertOne({ token , userId: userHasAnAccount._id });
+
 
         const validPassword = bcrypt.compareSync(user.password, userHasAnAccount.password);
 
@@ -40,7 +40,10 @@ export async function signInValidation(req, res, next) {
             return res.sendStatus(401);
         }
 
-        res.locals.user = user;
+        res.locals.user = {
+            ...user, 
+            token : token
+        };
 
     } catch (error) {
         res.sendStatus(500);
