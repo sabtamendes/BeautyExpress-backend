@@ -53,6 +53,6 @@ db.products.insertMany([
         productUrl: "https://cdn.pixabay.com/photo/2019/07/12/05/47/clamy-nail-polish-4331963_960_720.jpg",
         category: "unhas",
         unitaryValue: 10.00,
-        stock: 120
+        stock: 0
     }   
 ]);

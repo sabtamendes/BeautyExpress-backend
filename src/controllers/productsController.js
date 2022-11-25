@@ -1,27 +1,38 @@
 import { products } from "../database/db.js";
 
+export function teste()
+{
+  console.log('entrei na teste')
+  return
+}
+
 export async function getProducts(req, res) {
+
   try {
     const { category, productName } = req.query;
 
     // console.log("query =", req.query);
-    let products = [];
+    // console.log('category =', category)
+    // console.log('productName =', productName)
+
+    let productsData = [];
     if (category) {
-      console.log("entrei aqui if");
-      products = await products.find({ category }).toArray();
+  
+      // products = await products.find({ category }).toArray();
+      productsData = await products.find({ category }).toArray();
     } else if (productName) {
-      console.log("entrei aqui else if");
+      
       //   products = await products.find({ productName: productName });
-      products = await products
+      productsData = await products
         .find({ productName: { $regex: productName, $options: "i" } })
         .toArray();
 
       // db.products.find({productName: /.*malte.*/i})
     } else {
-      console.log("entrei aqui else");
-      products = await products.find().toArray();
+      
+      productsData = await products.find().toArray();
     }
-    return res.status(200).send(products);
+    return res.status(200).send(productsData);
     // return res.status(200).send(products);
   } catch (error) {
     console.error(error);
@@ -29,12 +40,15 @@ export async function getProducts(req, res) {
   }
 }
 
+
+
 export async function postProducts(req, res) {
   const body = req.body;
   // console.log("body", body);
 
   try {
-    const products = await products.insertOne(body);
+    // const products = await products.insertOne(body);
+    await products.insertOne(body);
 
     res.sendStatus(201);
   } catch (error) {
