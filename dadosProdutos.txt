@@ -1,0 +1,58 @@
+db.products.insertMany([
+    {
+        productName: 'Sabonete coração - especial dia das mães',
+        productUrl: 'https://cdn.pixabay.com/photo/2017/06/26/09/36/lavender-2443210_960_720.jpg',
+        category: 'higiene corporal',
+        unitaryValue: 5.00,
+        stock: 100
+    },
+    {
+        productName: 'Shampoo sólido ecológico',
+        productUrl: 'https://cdn.pixabay.com/photo/2020/03/13/03/58/handmade-soap-4926842_960_720.jpg',
+        category: 'cabelos',
+        unitaryValue: 30.00,
+        stock: 50
+    },
+    {
+        productName: 'Hidratante corporal',
+        productUrl: 'https://cdn.pixabay.com/photo/2016/06/17/22/44/cream-1464295_960_720.png',
+        category: 'skincare',
+        unitaryValue: 20.00,
+        stock: 300
+    },
+    {
+        productName: 'Sérum facial rejuvenescedor',
+        productUrl: 'https://cdn.pixabay.com/photo/2018/12/14/19/36/face-cream-3875674_960_720.jpg',
+        category: 'skincare',
+        unitaryValue: 250.00,
+        stock: 80
+    },
+    {
+        productName: 'Protetor solar 50FPS',
+        productUrl: 'https://cdn.pixabay.com/photo/2017/06/04/22/15/sunscreen-2372366_960_720.jpg',
+        category: 'skincare',
+        unitaryValue: 69.90,
+        stock: 80
+    },
+    {
+        productName: 'Batom vermelho Paola Bracho',
+        productUrl: 'https://cdn.pixabay.com/photo/2017/09/06/20/17/lipstick-2722847_960_720.jpg',
+        category: 'skincare',
+        unitaryValue: 29.90,
+        stock: 80
+    },
+    {
+        productName: 'Kit de maquiagem',
+        productUrl: 'https://cdn.pixabay.com/photo/2016/10/22/20/55/makeup-brushes-1761648_960_720.jpg',
+        category: 'maquiagem',
+        unitaryValue: 150.00,
+        stock: 80
+    },
+    {
+        productName: "Esmalte em Gel glitter",
+        productUrl: "https://cdn.pixabay.com/photo/2019/07/12/05/47/clamy-nail-polish-4331963_960_720.jpg",
+        category: "unhas",
+        unitaryValue: 10.00,
+        stock: 120
+    }   
+]);
