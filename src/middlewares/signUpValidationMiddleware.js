@@ -12,7 +12,7 @@ export async function signUpValidation(req, res, next) {
     }
 
     try {
-
+      
         const isEmailAllreadyInUse = await users.findOne({ email: user.email });
 
         if (isEmailAllreadyInUse) {
