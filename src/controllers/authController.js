@@ -20,10 +20,12 @@ export async function postSignUp(req, res) {
 }
 
 export async function postSignIn(req, res) {
-    const user = res.locals.user;
-  
+    const {email, token} = res.locals.user;
+
     try {
-        res.send({ name: user.name, token: user.token });
+       const user = await users.findOne({email});
+
+        res.send({name: user.name, token});
 
     } catch (error) {
         res.sendStatus(500);
