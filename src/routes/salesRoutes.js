@@ -11,7 +11,7 @@ salesRoutes.get('/sales', listSales)
 
 
 
-salesRoutes.post('/sales-order', salesMiddleware,saveRequest)
+salesRoutes.post('/salesorder', salesMiddleware,saveRequest)
 
 
 export default salesRoutes
