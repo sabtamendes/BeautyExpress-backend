@@ -17,6 +17,7 @@ export const users = db.collection("users");
 export const connection = db.collection("connection");
 export const products = db.collection("products");
 export const cart = db.collection("cart");
+export const salesorder = db.collection("sales-order");
 export const sales = db.collection("sales");
 
 export default db;

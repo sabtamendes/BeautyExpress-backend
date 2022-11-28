@@ -1,7 +1,6 @@
 import joi from 'joi'
 
-
-const salesSchema = joi.object({
+ const salesSchema = joi.object({
     iduser: joi.string().required(),
     date: joi.string().required(),
     paymentType: joi.valid('credito', 'debito', 'boleto', 'n'),
@@ -9,14 +8,13 @@ const salesSchema = joi.object({
     productsList: joi.array().items(joi.object({
         idProduct: joi.string().required(),
         quantity: joi.number().required(),
-        valorProduto: joi.number().precision(2).required()
+        unitaryValue: joi.number().precision(2).required()
     }))
     // paymentType: joi.valid('credito', 'debito', 'boleto', 'n'),
     // status: joi.valid('P', 'V').required()
     
 })
-
-export default salesSchema
+export default salesSchema;
 /*
 
 products
