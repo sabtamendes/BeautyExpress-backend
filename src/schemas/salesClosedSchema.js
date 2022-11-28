@@ -1,6 +1,6 @@
 import joi from 'joi'
 
-export  const salesClosedSchema = joi.object({
+export const salesClosedSchema = joi.object({
     userId: joi.string().required(),
     date: joi.string().required(),
     paymentType: joi.valid('credito', 'debito', 'boleto', 'n'),
