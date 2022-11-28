@@ -9,9 +9,9 @@ const salesRoutes = Router()
 
 salesRoutes.get('/sales', listSales)
 
-salesRoutes.post('/sales',tokenMiddleware, salesSchemaMiddleware, saveOrderFiniched);
+salesRoutes.post('/sales', tokenMiddleware, salesSchemaMiddleware, saveOrderFiniched);
 
-salesRoutes.post('/salesorder', salesSchemaMiddleware,saveRequest)
+salesRoutes.post('/sales-order', salesSchemaMiddleware, saveRequest)
 
 
 export default salesRoutes

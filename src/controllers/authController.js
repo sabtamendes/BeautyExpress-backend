@@ -24,8 +24,8 @@ export async function postSignIn(req, res) {
 
     try {
         const user = await users.findOne({ email });
-
-        res.send({ name: user.name, token });
+console.log(user, "LOGIN")
+        res.send({ name: user.name, token, userId: user.userId  });
 
     } catch (error) {
         res.sendStatus(500);
