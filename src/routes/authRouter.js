@@ -1,7 +1,7 @@
 import { Router } from "express";
 
 import {
-  LoggingOut,
+  loggingOut,
   postSignIn,
   postSignUp
 } from "../controllers/authController.js";
@@ -20,5 +20,5 @@ const router = Router();
 
 router.post("/sign-up", signUpValidation, postSignUp);
 router.post("/sign-in", signInValidation, postSignIn);
-router.delete("/logout", tokenMiddleware, LoggingOut);
+router.delete("/sign-out", tokenMiddleware, loggingOut);
 export default router;
