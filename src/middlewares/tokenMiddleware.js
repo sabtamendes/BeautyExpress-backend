@@ -26,7 +26,7 @@ export default async function tokenMiddleware(req, res, next) {
         res.sendStatus(500);
     }
 
-    res.locals.user = userExists;
+    res.locals.user = token;
 
     next();
 }

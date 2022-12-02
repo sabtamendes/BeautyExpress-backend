@@ -32,7 +32,7 @@ console.log(user, "LOGIN")
     }
 }
 
-export async function LoggingOut(req, res) {
+export async function loggingOut(req, res) {
     const user = res.locals.user;
     console.log(user, "LOGGING OUT");
 
